@@ -9,13 +9,12 @@ app.use(express.json());
 
 // Basic route
 app.get('/', async (req, res) => {
- const [err,result] = await trx.trxGetBalance()
+ const [err,result] = await trx.usdtGetBalance()
   res.send({
     err: err,
     result: result
   });
 });
-
 // Start the server
 const PORT = 3000;
 app.listen(PORT, () => {
